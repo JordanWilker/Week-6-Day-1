@@ -66,24 +66,25 @@
             to make sure you can get the correct element to display. Feel free
             to add another condition.
           </p>
+          {{ grade = 95}}
           <!-- v-if comparing grade and 90 -->
-          <div>
+          <div v-if="grade>=90">
             <p>The grade is 'A'.</p>
           </div>
           <!-- v-else-if comparing grade and 80 -->
-          <div>
+          <div v-else-if="grade>=80">
             <p>The grade is 'B'.</p>
           </div>
           <!-- v-else-if comparing grade and 70 -->
-          <div>
+          <div v-else-if="grade>=70">
             <p>The grade is 'C'.</p>
           </div>
           <!-- v-else-if comparing grade and 60 -->
-          <div>
+          <div v-else-if="grade>=60">
             <p>The grade is 'D'.</p>
           </div>
           <!-- v-else to display if all the others fail -->
-          <div>
+          <div v-else>
             <p>The grade is 'F'.</p>
           </div>
         </div>
@@ -130,7 +131,9 @@ export default {
     const state = reactive({
       //add a property to toggle the player-card here.
       //add a property to set the number value here.
+      showPlayer : true,
       player: {
+        id: "darryl",
         photo: "https://robohash.org/D$",
         name: "D$",
         position: "WR",
